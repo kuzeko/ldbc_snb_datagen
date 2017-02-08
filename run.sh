@@ -1,4 +1,12 @@
 #!/bin/bash
+set -eu -o pipefail
+IFS=$'\n\t'
+
+# Compute current path and set working dir so maven works
+SCRIPTPATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd "$SCRIPTPATH"
+
+
 DEFAULT_HADOOP_HOME=/home/user/hadoop-2.6.0 #change to your hadoop folder
 DEFAULT_LDBC_SNB_DATAGEN_HOME=/home/user/ldbc_snb_datagen #change to your ldbc_socialnet_dbgen folder
 
